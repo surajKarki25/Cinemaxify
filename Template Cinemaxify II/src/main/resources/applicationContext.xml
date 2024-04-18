@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the beans for NormalPlan and PremiumPlan -->
+    <bean id="normal" class="com.example.Cinemaxify.NormalPlan" />
+    <bean id="premium" class="com.example.Cinemaxify.PremiumPlan" />
+
+    <!-- Define beans for different types of members with different plan types -->
+
+    <!-- Self with Normal plan -->
+    <bean id="selfnormal" class="com.example.Cinemaxify.Self">
+        <constructor-arg ref="normal"/>
+    </bean>
+
+    <!-- Self with Premium plan -->
+    <bean id="selfpremium" class="com.example.Cinemaxify.Self">
+        <constructor-arg ref="premium"/>
+    </bean>
+
+    <!-- Spouse with Normal plan -->
+    <bean id="spousenormal" class="com.example.Cinemaxify.Spouse">
+        <constructor-arg ref="normal"/>
+    </bean>
+
+    <!-- Spouse with Premium plan -->
+    <bean id="spousepremium" class="com.example.Cinemaxify.Spouse">
+        <constructor-arg ref="premium"/>
+    </bean>
+
+</beans>
